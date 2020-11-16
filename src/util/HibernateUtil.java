@@ -1,5 +1,6 @@
 package util;
 
+import model.Product;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -11,7 +12,8 @@ public class HibernateUtil {
     public static synchronized SessionFactory getSessionFactory() {
         if (factory == null) {
             factory = new Configuration()
-                    .configure("hiberante.cfg.xml")
+                    .configure()
+                    .addAnnotatedClass(Product.class)
                     .buildSessionFactory();
         }
         return factory;
