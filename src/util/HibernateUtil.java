@@ -1,6 +1,7 @@
 package util;
 
 import model.Product;
+import model.UserCart;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -14,6 +15,7 @@ public class HibernateUtil {
             factory = new Configuration()
                     .configure()
                     .addAnnotatedClass(Product.class)
+                    .addAnnotatedClass(UserCart.class)
                     .buildSessionFactory();
         }
         return factory;

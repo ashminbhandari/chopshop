@@ -16,67 +16,101 @@
     <p>ChopShop is the first online store to provide a 1 second delivery guarantee. Forget Amazon, this is next level!
         Try it now!</p>
 </div>
-<table class="table table-striped table-dark">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Product Name</th>
-        <th scope="col">Product Price ($ USD)</th>
-        <th scope="col">Add to cart ?</th>
-    </tr>
-    </thead>
-    <tbody>
+<form method="POST" action="add-to-cart">
+    <table class="table table-striped table-dark">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Price ($ USD)</th>
+            <th scope="col"><button type="submit" class="btn btn-warning"> + Add selected items to cart </button></th>
+        </tr>
+        </thead>
+        <tbody>
         <tr>
             <th scope="row">${products[0].id}</th>
             <td>${products[0].productName}</td>
             <td>${products[0].productPrice}</td>
-            <td><button type="button" class="btn btn-warning">Add to cart?</button></td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="${products[0].id}" name="checkOutProduct0">
+                </div>
+            </td>
         </tr>
         <tr>
             <th scope="row">${products[1].id}</th>
             <td>${products[1].productName}</td>
             <td>${products[1].productPrice}</td>
-            <td><button type="button" class="btn btn-warning">Add to cart?</button></td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="${products[1].id}" name="checkOutProduct1">
+                </div>
+            </td>
         </tr>
         <tr>
             <th scope="row">${products[2].id}</th>
             <td>${products[2].productName}</td>
             <td>${products[2].productPrice}</td>
-            <td><button type="button" class="btn btn-warning">Add to cart?</button></td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="${products[2].id}" name="checkOutProduct2">
+                </div>
+            </td>
         </tr>
         <tr>
             <th scope="row">${products[3].id}</th>
             <td>${products[3].productName}</td>
             <td>${products[3].productPrice}</td>
-            <td><button type="button" class="btn btn-warning">Add to cart?</button></td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="${products[3].id}" name="checkOutProduct3">
+                </div>
+            </td>
         </tr>
         <tr>
             <th scope="row">${products[4].id}</th>
             <td>${products[4].productName}</td>
             <td>${products[4].productPrice}</td>
-            <td><button type="button" class="btn btn-warning">Add to cart?</button></td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="${products[4].id}" name="checkOutProduct4">
+                </div>
+            </td>
         </tr>
         <tr>
             <th scope="row">${products[5].id}</th>
             <td>${products[5].productName}</td>
             <td>${products[5].productPrice}</td>
-            <td><button type="button" class="btn btn-warning">Add to cart?</button></td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="${products[5].id}" name="checkOutProduct5">
+                </div>
+            </td>
         </tr>
         <tr>
             <th scope="row">${products[6].id}</th>
             <td>${products[6].productName}</td>
             <td>${products[6].productPrice}</td>
-            <td><button type="button" class="btn btn-warning">Add to cart?</button></td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="${products[6].id}" name="checkOutProduct6">
+                </div>
+            </td>
         </tr>
         <tr>
             <th scope="row">${products[7].id}</th>
             <td>${products[7].productName}</td>
             <td>${products[7].productPrice}</td>
-            <td><button type="button" class="btn btn-warning">Add to cart?</button></td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="${products[7].id}" name="checkOutProduct7">
+                </div>
+            </td>
         </tr>
         </tbody>
     </table>
     </tbody>
-</table>
+    </table>
+</form>
 </body>
 </html>

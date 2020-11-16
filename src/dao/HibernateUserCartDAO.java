@@ -1,30 +1,33 @@
 package dao;
 
 import model.Product;
+import model.UserCart;
+
 import util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class HibernateProductDAO implements ProductDAO {
+public class HibernateUserCartDAO implements UserCartDAO {
 
     @Override
-    public List<Product> getProducts() {
+    public List<UserCart> getUserCart() {
         Session currentSession = HibernateUtil.getSessionFactory().getCurrentSession();
         currentSession.beginTransaction();
-        Query<Product> query = currentSession.createQuery("select a from Product a", Product.class);
-        List<Product> products = query.getResultList();
+        Query<UserCart> query = currentSession.createQuery("select a from UserCart a", UserCart.class);
+        List<UserCart> userCart = query.getResultList();
         currentSession.getTransaction().commit();
-        return products;
+        return userCart;
     }
 
     @Override
-    public Product getProductById(int id) {
+    public void addToCart(int productId) {
         Session currentSession = HibernateUtil.getSessionFactory().getCurrentSession();
         currentSession.beginTransaction();
-        Product product = currentSession.get(Product.class, id);
+        UserCart cartItem = new UserCart();
+        cartItem.setProductId(productId);
+        currentSession.save(cartItem);
         currentSession.getTransaction().commit();
-        return product;
     }
 }

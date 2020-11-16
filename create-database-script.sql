@@ -28,8 +28,9 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `user_cart`;
 
 CREATE TABLE `user_cart` (
-    `username` varchar(45) DEFAULT 'Ashmin',
+    `id` int NOT NULL AUTO_INCREMENT,
     `product_id` int,
+    PRIMARY KEY (`id`),
     foreign key (product_id) references product(id)
     on delete cascade
 ) ENGINE=InnoDB
